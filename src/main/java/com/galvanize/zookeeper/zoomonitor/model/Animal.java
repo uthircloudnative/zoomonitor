@@ -1,8 +1,17 @@
 package com.galvanize.zookeeper.zoomonitor.model;
 
+import org.hibernate.annotations.Generated;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Animal {
 
-    private String id;
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String name;
     private String type;
 
@@ -11,11 +20,11 @@ public class Animal {
         this.type = type;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
