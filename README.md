@@ -1,5 +1,7 @@
 # zoomonitor
 
+AC:1
+
 Rule: Animal should have a name and a type (flying, swimming, walking)
 
 When I add an animalDto
@@ -22,5 +24,33 @@ Response:
 "name":"Lion",
 "type":"walking"
 }
+
+AC:2
+
+
+Given I have added animals to my zoo
+When I check my zoo
+Then I see all the animals
+
+URI: /zoo/animals
+VERB: GET
+HTTP_STATUS: 200
+
+Response:
+
+[
+{
+"id":1,
+"name":"Lion",
+"type":"walking"
+},
+{
+"id":2,
+"name":"Parrot",
+"type":"flying"
+}
+]
+
+
 
 
