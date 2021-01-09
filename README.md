@@ -52,5 +52,31 @@ Response:
 ]
 
 
+Rule: Animal moods are unhappy or happy. They are unhappy by default.
+
+Given an animal is unhappy
+When I give it a treat
+Then the animal is happy
+
+Given an animal is happy
+When I give it a treat
+Then the animal is still happy
+
+URI: /zoo/animals/{id}
+VERB: PUT
+HTTP_STATUS: 200
+
+Request:
+{
+"treat":"treat"
+}
 
 
+Response:
+
+{
+"id":"1"
+"name":"Lion",
+"type":"walking",
+"mood":"happy"
+}
