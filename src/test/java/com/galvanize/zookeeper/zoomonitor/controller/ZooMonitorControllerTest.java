@@ -2,6 +2,7 @@ package com.galvanize.zookeeper.zoomonitor.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.galvanize.zookeeper.zoomonitor.model.Animal;
+import com.galvanize.zookeeper.zoomonitor.service.ZooMonitorService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -19,8 +20,8 @@ public class ZooMonitorControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-//    @MockBean
-//    private ZooMonitorService zooMonitorService;
+    @MockBean
+    private ZooMonitorService zooMonitorService;
 
 
    @Autowired
