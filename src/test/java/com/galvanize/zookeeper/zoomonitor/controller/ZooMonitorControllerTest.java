@@ -54,12 +54,21 @@ public class ZooMonitorControllerTest {
         Animal animal = new Animal("Lion","Walking");
         zooMonitorRepository.save(animal);
 
+        animal = new Animal("Parrot","Flying");
+        zooMonitorRepository.save(animal);
+
         mockMvc.perform(get("/zoo/animals"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").exists())
                 .andExpect(jsonPath("$[0].name").value("Lion"))
-                .andExpect(jsonPath("$[0].type").value("Walking"));
+                .andExpect(jsonPath("$[0].type").value("Walking"))
+                .andExpect(jsonPath("$[1].id").exists())
+                .andExpect(jsonPath("$[1].name").value("Parrot"))
+                .andExpect(jsonPath("$[1].type").value("Flying"));
+
+
+
     }
 
 
